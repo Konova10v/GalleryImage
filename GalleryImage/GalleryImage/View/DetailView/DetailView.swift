@@ -19,9 +19,9 @@ struct DetailView: View {
                 
                 HStack(spacing: 30, content: {
                     Button(action: {
-                              print("button pressed")
+                        print("button pressed")
                         
-                            }) {
+                    }) {
                         Image(systemName: "heart")
                             .renderingMode(.original)
                             .resizable()
@@ -129,7 +129,7 @@ struct DetailView: View {
                 .padding(.leading, 10)
                 
                 
-                VStack {
+                VStack(alignment: .leading) {
                     Text("Print avaliable HERE Follow on INSTAGRAM")
                         .font(.system(size: 18))
                     Button(action: {
@@ -197,14 +197,15 @@ struct DetailView: View {
                 })
             })
             .padding(.leading, 10)
+            
+            TagCloudView()
+                .padding(.leading, 10)
         })
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            DetailView()
-        }
+        DetailView()
     }
 }

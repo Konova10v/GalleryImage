@@ -9,11 +9,13 @@ import Foundation
 import SwiftUI
 
 class GalleryImageViewModel: ObservableObject {
-    var tempMoscow: [GalleryImage] = [GalleryImage]()
+    var image: [GalleryImage] = [GalleryImage]()
     
     func fetchWeatherMoscow() {
         GalleryImageService().getGalleryImage { (result) in
-            self.tempMoscow = result
+            DispatchQueue.main.async {
+                self.image = result
+            }
         }
     }
 }

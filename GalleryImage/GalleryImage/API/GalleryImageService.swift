@@ -17,7 +17,6 @@ class GalleryImageService {
         let url = ServerAPI.baseURL
         
         APICallManager.shared.createRequest(url, method: .get, headers: nil, parameters: nil, onSuccess: { (responseObject: JSON) -> Void in
-            print("test1 \(responseObject)")
             if let cocktailList = responseObject.arrayObject as? [[String : Any]] {
                 if let mapped: [GalleryImageMapper] = Mapper<GalleryImageMapper>().mapArray(JSONObject: cocktailList) {
                     let meters = GalleryImageService.self.convertMeters(meters: mapped)

@@ -9,12 +9,12 @@ import Foundation
 import ObjectMapper
 
 struct GalleryImage {
-    var id: String = ""
-    var author: String = ""
-    var width: Int = 0
-    var height: Int = 0
-    var url: String = ""
-    var downloadUrl: String = ""
+    public var id: String = ""
+    public var author: String = ""
+    public var width: Int = 0
+    public var height: Int = 0
+    public var url: String = ""
+    public var downloadUrl: String = ""
     
     init(id: String, author: String, width: Int, height: Int, url: String, downloadUrl: String) {
         self.id = id
@@ -32,12 +32,12 @@ struct GalleryImage {
 
 // MARK: - Mapper
 class GalleryImageMapper: Mappable {
-    var id: String?
-    var author: String?
-    var width: Int?
-    var height: Int?
-    var url: String?
-    var downloadUrl: String?
+    public var id: String?
+    public var author: String?
+    public var width: Int?
+    public var height: Int?
+    public var url: String?
+    public var downloadUrl: String?
 
     required init?(map: Map) {
         // ...

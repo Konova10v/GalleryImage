@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct MainCellView: View {
-    @State var cocktail: GalleryImage
+    @State var image: GalleryImage
     @Environment(\.imageCache) var cache: ImageCache
     
     var body: some View {
         ZStack {
-            AsyncImage(url: URL(string: cocktail.downloadUrl)!,
+            AsyncImage(url: URL(string: image.downloadUrl)!,
                        cache: self.cache,
                        placeholder: Text("Loading"),
                        configuration: {$0.resizable() }
@@ -26,6 +26,6 @@ struct MainCellView: View {
 
 struct MainCellView_Previews: PreviewProvider {
     static var previews: some View {
-        MainCellView(cocktail: GalleryImage.getDefault())
+        MainCellView(image: GalleryImage.getDefault())
     }
 }
